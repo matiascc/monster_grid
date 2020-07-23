@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/monster_grid/static/css/main.ba676505.chunk.css",
+    "main.js": "/monster_grid/static/js/main.ef186ddd.chunk.js",
+    "main.js.map": "/monster_grid/static/js/main.ef186ddd.chunk.js.map",
+    "runtime-main.js": "/monster_grid/static/js/runtime-main.aaebda9b.js",
+    "runtime-main.js.map": "/monster_grid/static/js/runtime-main.aaebda9b.js.map",
+    "static/css/2.3c03f26f.chunk.css": "/monster_grid/static/css/2.3c03f26f.chunk.css",
+    "static/js/2.3cc0d141.chunk.js": "/monster_grid/static/js/2.3cc0d141.chunk.js",
+    "static/js/2.3cc0d141.chunk.js.map": "/monster_grid/static/js/2.3cc0d141.chunk.js.map",
+    "index.html": "/monster_grid/index.html",
+    "precache-manifest.fdc5303ff586f90210dbcbc2b060ff81.js": "/monster_grid/precache-manifest.fdc5303ff586f90210dbcbc2b060ff81.js",
+    "service-worker.js": "/monster_grid/service-worker.js",
+    "static/css/2.3c03f26f.chunk.css.map": "/monster_grid/static/css/2.3c03f26f.chunk.css.map",
+    "static/css/main.ba676505.chunk.css.map": "/monster_grid/static/css/main.ba676505.chunk.css.map",
+    "static/js/2.3cc0d141.chunk.js.LICENSE.txt": "/monster_grid/static/js/2.3cc0d141.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/monster_grid/static/media/disney_font.12622ada.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.aaebda9b.js",
+    "static/css/2.3c03f26f.chunk.css",
+    "static/js/2.3cc0d141.chunk.js",
+    "static/css/main.ba676505.chunk.css",
+    "static/js/main.ef186ddd.chunk.js"
+  ]
+}
