@@ -2,11 +2,11 @@
     font-family: 'Walt Disney Script v4.1 Regular';
     font-style: normal;
     font-weight: normal;
-    src: local('Walt Disney Script v4.1 Regular'), url('wds011402.woff') format('woff');
+    src: local('Walt Disney Script v4.1 Regular'), url('disney_font.woff') format('woff');
     }
 
 h1 {
     font-family: 'Walt Disney Script v4.1 Regular';
-    font-weight: 50;
+    font-weight: 100;
     color: #0ccac4;
 }
