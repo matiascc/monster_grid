@@ -3,6 +3,7 @@ import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import "./App.css";
 import Scroll from "../components/Scroll"
+import ErrorBoundry from "./ErrorBoundry"
 
 class App extends React.Component {
     constructor() {
@@ -31,20 +32,17 @@ class App extends React.Component {
                 .includes(searchfield.toLowerCase());
         });
 
-        if (!monsters.length){
-            return <h1>Loading...</h1>
-        }
-        else{
-            return (
-                <div className="tc">
-                    <h1 className="f1">Monster Grid</h1>
-                    <SearchBox searchChange={this.onSearchChange}></SearchBox>
-                    <Scroll>
+        return (
+            <div className="tc">
+                <h1 className="f1">Monster Grid</h1>
+                <SearchBox searchChange={this.onSearchChange}></SearchBox>
+                <Scroll>
+                    <ErrorBoundry>
                         <CardList monsters={filteredMonsters}></CardList>
-                    </Scroll>
-                </div>
-            );
-        }        
+                    </ErrorBoundry>
+                </Scroll>
+            </div>
+        );  
     }
 }
 
