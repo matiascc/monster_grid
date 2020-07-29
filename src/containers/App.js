@@ -1,41 +1,46 @@
 import React from "react";
+import { connect } from "react-redux"
 import CardList from "../components/CardList";
 import SearchBox from "../components/SearchBox";
 import "./App.css";
 import Scroll from "../components/Scroll"
-import ErrorBoundry from "./ErrorBoundry"
+import ErrorBoundry from "../components/ErrorBoundry"
+import { setSearchField, requestMonsters } from "../actions"
+
+const mapStateToProps = state => {
+    return {
+        searchField: state.searchMonsters.searchField,
+        monsters: state.requestMonsters.monsters,
+        isPending: state.requestMonsters.isPending,
+        error: state.requestMonsters.error
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+        onRequestMonsters: () => dispatch(requestMonsters())
+    }
+}
 
 class App extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            monsters: [],
-            searchfield: "",
-        };
-    }
-
     componentDidMount() {
-        fetch("https://jsonplaceholder.typicode.com/users")
-            .then((response) => response.json())
-            .then(users => this.setState({ monsters: users }));
+        this.props.onRequestMonsters();
     }
-
-    onSearchChange = (event) => {
-        this.setState({ searchfield: event.target.value });
-    };
 
     render() {
-        const { monsters, searchfield } = this.state;
+        const { searchField, onSearchChange, monsters, isPending } = this.props;
         const filteredMonsters = monsters.filter((monster) => {
             return monster.name
                 .toLowerCase()
-                .includes(searchfield.toLowerCase());
+                .includes(searchField.toLowerCase());
         });
-
-        return (
+        return isPending ?
+            <h1>Loading</h1> :
+            (
             <div className="tc">
                 <h1 className="f1">Monster Grid</h1>
-                <SearchBox searchChange={this.onSearchChange}></SearchBox>
+                <SearchBox searchChange={onSearchChange}></SearchBox>
                 <Scroll>
                     <ErrorBoundry>
                         <CardList monsters={filteredMonsters}></CardList>
@@ -46,4 +51,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
