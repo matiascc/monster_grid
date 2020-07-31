@@ -1,6 +1,6 @@
 # Monster Grid
 
-Little proyect for udemy course, using React.
+Little proyect for udemy course, using React and Redux.
 
 #### To run the project:
 1. Download this repo
